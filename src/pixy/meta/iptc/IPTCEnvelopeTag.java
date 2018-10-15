@@ -70,11 +70,15 @@ public enum IPTCEnvelopeTag implements IPTCTag {
 			 e.printStackTrace();
 		 }
 		 // Hex representation of the data
-		 return StringUtils.byteArrayToHexString(data, 0, 10);
+		 return StringUtils.byteArrayToHexString(data, 0, IPTCTag.MAX_STRING_REPR_LEN);
 	 }
 	 
 	 public String getName() {
 		 return name;
+	 }
+	 
+	 public int getRecordNumber() {
+		 return IPTCRecord.ENVELOP.getRecordNumber();
 	 }
 	 
 	 public int getTag() { return tag; }
